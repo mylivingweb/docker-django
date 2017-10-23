@@ -1,17 +1,16 @@
 IMAGE_BASE=mylivingweb/
-DOMAIN=mydomain.tld
-PROJECT=django-project
+DOMAIN=conwaycorp.net
+PROJECT=api
 PORT=8888
 #Where you django code is located
 MY_PWD =$(shell pwd)
-DATA_DIR=$(MY_PWD)/app/project_name
+DATA_DIR=$(MY_PWD)/app
 REGISTRY=your-repo-here
 #NO NEED TO EDIT BELOW THIS POINT
 #UNLESS YOU HAVE A CUSTOM DOCKER REPO
 IMAGE=$(PROJECT)_$(DOMAIN)
 TAG=latest
 TAG2=$(shell date +%s)
-
 CONTAIN_DATA=/$(DOMAIN)/config/$(PROJECT)
 CONTAIN_LOGS=/var/log/nginx
 LOGS_DIR=$(MY_PWD)/logs

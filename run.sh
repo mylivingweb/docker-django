@@ -2,7 +2,12 @@
 DOMAIN=`cat /.django` 
 PROJECT=`cat /.project`
 
-cd /${DOMAIN}/config/${PROJECT} && pip3.5 install -r requirements/*.txt && python3.5 manage.py makemigrations && python3.5 manage.py migrate
+cd /${DOMAIN}/config/${PROJECT}
+pip3.5 install -r /${DOMAIN}/config/${PROJECT}/requirements.txt
+
+python3.5 /${DOMAIN}/config/${PROJECT}/manage.py collectstatic --noinput
+python3.5 /${DOMAIN}/config/${PROJECT}/manage.py makemigrations
+python3.5 /${DOMAIN}/config/${PROJECT}/manage.py migrate
 
 chown -R djangouser:nginx /${DOMAIN}/config
 
