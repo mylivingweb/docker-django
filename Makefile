@@ -2,10 +2,11 @@ IMAGE_BASE=mylivingweb/
 DOMAIN=dockerdjango
 PROJECT=api
 PORT=8888
+REGISTRY=your-repo-here
 #Where you django code is located
 MY_PWD =$(shell pwd)
 DATA_DIR=$(MY_PWD)/app
-REGISTRY=your-repo-here
+
 #NO NEED TO EDIT BELOW THIS POINT
 #UNLESS YOU HAVE A CUSTOM DOCKER REPO
 IMAGE=$(PROJECT)_$(DOMAIN)
