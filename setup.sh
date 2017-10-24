@@ -6,8 +6,10 @@ if [ -z ${DOMAIN} ]; then
 fi
 
 sed -i "s/DOMAIN/${DOMAIN}/g" /${DOMAIN}/config/django.ini
+sed -i "s/DOMAIN/${DOMAIN}/g" /${DOMAIN}/config/e.config
 sed -i "s/DOMAIN/${DOMAIN}/g" /${DOMAIN}/config/nginx.conf
 sed -i "s/PROJECT/${PROJECT}/g" /${DOMAIN}/config/django.ini
+sed -i "s/PROJECT/${PROJECT}/g" /${DOMAIN}/config/e.config
 sed -i "s/PROJECT/${PROJECT}/g" /${DOMAIN}/config/nginx.conf
 sed -i "s/PORT/${PORT}/g" /${DOMAIN}/config/nginx.conf
 
